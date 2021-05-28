@@ -1,0 +1,25 @@
+#search-container
+    display: grid
+    grid-template-columns: 6fr 1fr
+    grid-template-areas: 'input-search-bar icon-search-bar'
+    padding: 1rem
+    border-bottom: 1px solid #C5C6C6
+
+#icon-search-bar
+    grid-area: icon-search-bar
+    border-radius: 0px 2px 2px 0px
+    background-color: #F4F5F5
+    box-shadow: 2px 2px 12px 0px #c5c6c6
+
+#input-search-bar
+    grid-area: input-search-bar
+    background-color: white
+    font-family: Helvetica
+    border-radius: 2px 0px 0px 2px
+    box-shadow: 2px 2px 14px 0px #c5c6c6
+    height: 1.5rem
+    font-size: 16px
+    color: #3B3D3F
+    border: none
+    &:focus
+        outline: none
