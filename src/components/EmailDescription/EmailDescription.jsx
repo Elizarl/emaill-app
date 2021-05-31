@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import ActionButtons from '../ActionButtons/ActionButtons';
 import "../EmailDescription/EmailDescription.sass";
 
 const EmailDescription = ({ email }) => {
@@ -8,20 +9,19 @@ const EmailDescription = ({ email }) => {
     <div id="description-container">
       {email !== undefined ? (
         <>
-          <div id="description-title">
-            <h2>Title</h2>
-          </div>
+          <ActionButtons />
+          <h3 id="email-from-title">{email.from}</h3>
+        <div id="tags-container">
           <div id="tags">
-            <h3>Tags</h3>
-            <div id="tags-buttons">
-              <div id="tag1">Inbox</div>
-              <div id="tag2">Business</div>
-            </div>
+              <div id="tag-title">Tags</div>
+              <div id="tag1">{email.tag}</div>
+              <div id="tag2">{email.tag}</div>
           </div>
-          <div id="emails-description">{email.body}</div>
+        </div>
+          <div id="emails-description"><p>{email.body}</p></div>
           <div id="footage">
             <div id="img">clipsito</div>
-            <button>Replay</button>
+            <button id="reply-button">Reply</button>
           </div>
         </>
       ) : (

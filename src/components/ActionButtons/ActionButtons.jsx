@@ -9,11 +9,11 @@ const ActionButtons = ({id , markAsUnread, deleteEmail, spamEmail}) => {
     return (
         <div id="actions-container">
                 <div id="delete-spam-buttons">
-                    <button onClick={() => deleteEmail(id)} id="delete">Delete</button>
-                    <button onClick={() => spamEmail(id)} id="spam">Spam</button>
+                    <button onClick={() => deleteEmail(id)} id="delete-button">Delete</button>
+                    <button onClick={() => spamEmail(id)} id="spam-button">Spam</button>
                 </div>
                 <div id="unread-button-container">
-                    <button  onClick={() => markAsUnread(id)} id="mark-unread">Mark as unread</button>
+                    <button  onClick={() => markAsUnread(id)} id="mark-unread-button">Mark as unread</button>
                 </div>
         </div>
       );
