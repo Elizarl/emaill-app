@@ -17,6 +17,10 @@ ReactDOM.render(
 );
 
 window.setInterval(() => {
-  store.dispatch(addEmail(emails[0]));
-  store.dispatch(addEmail(emails[1]));
-}, 1000);
+  if (store.getState().emails.length <8)
+  {
+    store.dispatch(addEmail(emails[0]));
+    store.dispatch(addEmail(emails[1]));
+  }
+  }, 1000);
+

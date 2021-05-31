@@ -7,3 +7,19 @@ export const addEmail = (email) => ({
         ...email
     }
 });
+
+export const markAsRead = (id) => ({
+    type: 'UPDATE_EMAIL',
+    id,
+    updates: {
+        isRead: true
+    }
+});
+
+export const markAsUnread = (id) => ({
+    type: 'UPDATE_EMAIL',
+    id,
+    updates: {
+        isRead: false
+    }
+});
