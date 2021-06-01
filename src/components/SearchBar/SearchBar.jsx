@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import '../SearchBar/SearchBar.sass';
 import { searchBy } from '../../actions/search'
 
-const SearchBar = ({ searchBy, onChange, text }) => {
+const SearchBar = ({ searchBy, onChange }) => {
   
   onChange = (e) => {
     searchBy(e.target.value)
@@ -11,7 +11,7 @@ const SearchBar = ({ searchBy, onChange, text }) => {
   return (
     <div id="search-container">
       <input id="input-search-bar" type="text" placeholder="Search" onChange={(e) => {
-        searchBy(text)
+        searchBy(e.target.value)
       }
       } />
       <div id="icon-search-bar">

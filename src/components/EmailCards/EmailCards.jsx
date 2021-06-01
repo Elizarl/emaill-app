@@ -26,6 +26,12 @@ const mapStateToProps = (state) => ({
             return email.spam == true;
         else (state.filter.filterby == "deleted")
         return email.deleted == true;
+    }).filter((email) => {
+        let textfilter = state.searchemails.text.toLowerCase();
+        if (textfilter != '')
+            return email.subject.toLowerCase().includes(textfilter) || email.from.toLowerCase().includes(textfilter);
+        else
+            return true;
     }),
 });
 
