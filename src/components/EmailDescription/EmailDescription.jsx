@@ -27,7 +27,7 @@ const EmailDescription = ({ email }) => {
           </div>
         </>
       ) : (
-        "no hay seleccionado"
+       <></>
       )}
     </div>
   );

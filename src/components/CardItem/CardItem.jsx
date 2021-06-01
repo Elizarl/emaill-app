@@ -7,15 +7,15 @@ import "../CardItem/CardItem.sass";
 import { setSelectedEmail } from "../../actions/selected";
 import { markAsRead } from "../../actions/emails";
 
-export const CardItem = ({ from, subject, id, setSelectedEmail, markAsRead }) => {
+export const CardItem = ({ from, subject, id, setSelectedEmail, markAsRead , email }) => {
   return (
     <div
       onClick={() => {
         setSelectedEmail(id);
         markAsRead(id);
       }}
-      className="card-item"
-    >
+       className={ id == email ? "card-item-active" : "card-item" }
+      >
       <div id="from-subject-container">
         <h4 id="from-title">{from}</h4>
         <h4 id="subject-title">{subject}</h4>
@@ -27,9 +27,13 @@ export const CardItem = ({ from, subject, id, setSelectedEmail, markAsRead }) =>
   );
 };
 
+const mapStateToProps = (state) => ({
+   email: state.selected
+});
+
 const mapDispatchToProps = (dispatch) => ({
   setSelectedEmail: (id) => dispatch(setSelectedEmail(id)),
   markAsRead: (id) => dispatch(markAsRead(id)),
 });
 
-export default connect(undefined, mapDispatchToProps)(CardItem);
+export default connect(mapStateToProps, mapDispatchToProps)(CardItem);
