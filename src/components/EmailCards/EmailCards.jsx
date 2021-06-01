@@ -22,11 +22,11 @@ const mapStateToProps = (state) => ({
     emails: state.emails.filter((email) => {
         if (state.filter.filterby == "inbox")
             return email.spam == false && email.deleted == false
-        else if(state.filter.filterby == "spam")
+        else if (state.filter.filterby == "spam")
             return email.spam == true;
         else (state.filter.filterby == "deleted")
-            return email.deleted == true;
-    })
+        return email.deleted == true;
+    }),
 });
 
 export default connect(mapStateToProps)(EmailCards);

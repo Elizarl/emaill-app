@@ -20,7 +20,9 @@ const EmailDescription = ({ email }) => {
         </div>
           <div id="emails-description"><p>{email.body}</p></div>
           <div id="footage">
-            <div id="img">clipsito</div>
+            <div id="img-container">
+                <img className="img2" src="https://img.icons8.com/ios/452/attach.png"  sizes="(min-width: 576px) 33.3vw, 100vw" />
+            </div>
             <button id="reply-button">Reply</button>
           </div>
         </>
