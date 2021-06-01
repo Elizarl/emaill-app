@@ -3,6 +3,7 @@ export const setSelectedEmail = (id) => ({
     id
 });
 
-export const clearSelectedEmail = () => ({
-    type: 'CLEAR_SELECTED_EMAIL'
+export const clearSelectedEmail = (id) => ({
+    type: 'CLEAR_SELECTED_EMAIL',
+    id
 });

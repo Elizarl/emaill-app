@@ -7,7 +7,7 @@ import "../EmailDescription/EmailDescription.sass";
 const EmailDescription = ({ email }) => {
   return (
     <div id="description-container">
-      {email !== undefined ? (
+      {email !== undefined  ? (
         <>
           <ActionButtons />
           <h3 id="email-from-title">{email.from}</h3>
